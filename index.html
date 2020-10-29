@@ -89,7 +89,7 @@
         <p><strong><center><font size=10>QGIS的数据格式拓展插件开发</font></center></strong></p>
 <p>​        VCT格式是我国在《地理空间数据交换格式》这一国家标准文件中制定的矢量数据交换格式。国产的GIS软件一般有对VCT格式的支持,但是在QGIS等国际GIS上支持较少:sweat::sweat:。我尝试着在QGIS中通过编写C++插件的方式,增加对VCT格式的支持，:thinking::thinking::thinking:途中发现QGIS拓展数据格式的资料还比较少，所以记下一篇博客，如果有理解不到位的地方，还望及时指出。该小项目的代码见<a target="_blank" rel="noopener" href="https://github.com/Falldio/QgsVctDataProvider/">Github</a>。</p>
 <hr>
-<p>&lt;%- toc(str, [options]) %&gt;</p>
+<p>&lt;%- toc(page.content) %&gt;</p>
 <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h1><p>开发环境：VS 2015</p>
 <p>Qt版本：5.11.2</p>
 <p>QGIS版本：3.12（下载一份源代码和发行版软件，讲道理可以只下载源代码然后自己编译出debug版本的，写插件时输出应该也更方便，但是我太菜了不懂cmake，编译不出来:cry:，就拿源代码去看内部原理，然后把插件写好了放进软件里再测试了:joy:就更加麻烦。​）</p>
