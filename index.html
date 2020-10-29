@@ -89,7 +89,34 @@
         <p><strong><center><font size="10">QGIS的数据格式拓展插件开发</font></center></strong></p>
 <p>​        VCT格式是我国在《地理空间数据交换格式》这一国家标准文件中制定的矢量数据交换格式。国产的GIS软件一般有对VCT格式的支持,但是在QGIS等国际GIS上支持较少:sweat::sweat:。我尝试着在QGIS中通过编写C++插件的方式,增加对VCT格式的支持，:thinking::thinking::thinking:途中发现QGIS拓展数据格式的资料还比较少，所以记下一篇博客，如果有理解不到位的地方，还望及时指出。该小项目的代码见<a target="_blank" rel="noopener" href="https://github.com/Falldio/QgsVctDataProvider/">Github</a>。</p>
 <hr>
-<p>&lt;%- toc(page.content) %&gt;</p>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#1-huan-jing-pei-zhi">1. 环境配置</a></li>
+<li><a href="#2-ji-zhu-lu-xian">2. 技术路线</a><ul>
+<li><a href="#2-1-ji-lei-shuo-ming">2.1 基类说明</a></li>
+<li><a href="#2-2-ji-cheng-lei-de-bu-fen-shi-xian">2.2 继承类的部分实现</a><ul>
+<li><a href="#2-2-1-qgsvctprovider">2.2.1 QgsVctProvider</a></li>
+<li><a href="#2-2-2-qgsvctfeaturesource">2.2.2 QgsVctFeatureSource</a></li>
+<li><a href="#2-2-3-qgsvctfeatureiterator">2.2.3 QgsVctFeatureIterator</a></li>
+<li><a href="#2-2-4-qgsvctprovidermetadata">2.2.4 QgsVctProviderMetadata</a></li>
+<li><a href="#2-2-5-qgsvctsourceselectprovider">2.2.5 QgsVctSourceSelectProvider</a></li>
+<li><a href="#2-2-6-qgsvctproviderguimetadata">2.2.6 QgsVctProviderGuiMetadata</a></li>
+<li><a href="#2-2-7-qgsvctsourceselect">2.2.7 QgsVctSourceSelect</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-zong-jie">3. 总结</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+
+
 <h1><span id="1-huan-jing-pei-zhi">1. 环境配置</span><a href="#1-huan-jing-pei-zhi" class="header-anchor">#</a></h1><p>开发环境：VS 2015</p>
 <p>Qt版本：5.11.2</p>
 <p>QGIS版本：3.12（下载一份源代码和发行版软件，讲道理可以只下载源代码然后自己编译出debug版本的，写插件时输出应该也更方便，但是我太菜了不懂cmake，编译不出来:cry:，就拿源代码去看内部原理，然后把插件写好了放进软件里再测试了:joy:就更加麻烦。​）</p>
@@ -172,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/29/QGIS%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%8B%93%E5%B1%95%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/" data-id="ckguraoyw0000hcv3e17uhap4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/29/QGIS%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E6%8B%93%E5%B1%95%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/" data-id="ckgurdjbq0000ecv35ke29bi4" class="article-share-link">Share</a>
       
       
     </footer>
